@@ -1,10 +1,10 @@
 import React from "react";
 
-function TasksList() {
+function TasksList(props) {
   return (
     <div>
       <header>
-        <p>List of tasks</p>
+        <p>{props.toDoItem}</p>
       </header>
     </div>
   );

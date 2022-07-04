@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
 
-function NewTask() {
+function NewTask(props) {
   const [task, setTask] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`New task is: ${task}`);
+    props.saveToArray(task);
+    //clear input value
+    setTask("");
   };
 
   return (
@@ -15,6 +17,7 @@ function NewTask() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          value={task}
           placeholder="Type a new task..."
           onChange={(e) => setTask(e.target.value)}
         />
