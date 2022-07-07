@@ -8,14 +8,15 @@ function ToDoList() {
 
   //when state receives a new value add it to array
   const addValueToList = (enteredValue) => {
-    list.push(enteredValue);
+    // list.push(enteredValue);
+    setList([...list, enteredValue]);
     console.log(list);
   };
 
   return (
     <div>
       <NewTask saveToArray={addValueToList} />
-      <TasksList toDoItem={list} />
+      <TasksList allTasks={list} />
     </div>
   );
 }

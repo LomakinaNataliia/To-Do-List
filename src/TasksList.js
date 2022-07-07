@@ -1,13 +1,7 @@
 import React from "react";
 
-function TasksList(props) {
-  return (
-    <div>
-      <header>
-        <p>{props.toDoItem}</p>
-      </header>
-    </div>
-  );
+function TasksList({ allTasks }) {
+  return allTasks.map((task) => <p>{task}</p>);
 }
 
 export default TasksList;
